@@ -1,0 +1,66 @@
+body {
+	background-color: #0000ff;
+	color: #ffffff;
+	font-family: arial, georgia;
+	font-size: 14px;
+}
+
+#numbers-container {
+	display: inline-block;
+	display: inline-block;
+	background-color: #4895c4;
+	width: 30rem;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	/*width: 260px;
+	position:absolute; left: 20px; top: 120px;*/
+    border: 3px solid #aaaaaa;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#grouping {
+	display: inline-block;
+}
+	
+#status-container {
+	background-color: #4895c4;
+	width: 30rem;
+	/*position:absolute;  left: 500px;top: 120px;*/
+	margin-left: 3rem;
+	margin-right: 3rem;
+    border: 3px solid #aaaaaa;
+	border-radius: 15px;
+	padding: 10px;
+}	
+
+.number {
+    background-image: url(images/lotto_ball.png);
+	background-size: 100%;
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	cursor:none;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.number span {
+	font-weight: bold;
+	cursor: pointer;
+}
+.number:hover {
+	/*background-image: url(images/lotto_ball.png);*/
+    background-position: 0 -43px;
+	cursor: inherit;
+}
+.ui-widget-content a.number:focus,
+.ui-widget-content a.number:active {
+    background-position: 0 -86px;
+}
+.ui-widget-content a.number.selected,
+.ui-widget-content a.number.included {
+    color: #cc0035;
+    background-position: 0 -129px;
+}
