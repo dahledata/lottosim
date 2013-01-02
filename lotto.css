@@ -5,15 +5,20 @@ body {
 	font-size: 14px;
 }
 
+#infoHeader {
+	width: 100%;
+	text-align: center;
+}
+
 #numbers-container {
 	display: inline-block;
-	display: inline-block;
 	background-color: #4895c4;
-	width: 30rem;
+	width: 20rem;
 	margin-left: 3rem;
 	margin-right: 3rem;
-	/*width: 260px;
-	position:absolute; left: 20px; top: 120px;*/
+	margin-top: 5rem;
+	float: left;
+	/*position:absolute; left: 20px; top: 120px;*/
     border: 3px solid #aaaaaa;
 	border-radius: 15px;
 	padding: 10px;
@@ -21,21 +26,22 @@ body {
 
 #grouping {
 	display: inline-block;
+	float:right;
+	margin-top: 5rem;
 }
 	
-#status-container {
+#cupon-container, #status-container {
 	background-color: #4895c4;
-	width: 30rem;
-	/*position:absolute;  left: 500px;top: 120px;*/
-	margin-left: 3rem;
+	min-width: 20rem;
 	margin-right: 3rem;
+	margin-bottom: 2rem;
     border: 3px solid #aaaaaa;
 	border-radius: 15px;
 	padding: 10px;
 }	
 
 .number {
-    background-image: url(images/lotto_ball.png);
+    background-image: url(images/red_ball.png);
 	background-size: 100%;
 	display: inline-block;
 	text-align: center;
@@ -46,21 +52,8 @@ body {
     width: 2.5rem;
 }
 
-.number span {
-	font-weight: bold;
-	cursor: pointer;
-}
-.number:hover {
-	/*background-image: url(images/lotto_ball.png);*/
-    background-position: 0 -43px;
-	cursor: inherit;
-}
-.ui-widget-content a.number:focus,
-.ui-widget-content a.number:active {
-    background-position: 0 -86px;
-}
-.ui-widget-content a.number.selected,
-.ui-widget-content a.number.included {
-    color: #cc0035;
-    background-position: 0 -129px;
+.number:hover, .number.selected {
+    background-image: url(images/white_ball.png);
+    color: #000000;
+    cursor: inherit;
 }
