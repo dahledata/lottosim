@@ -32,6 +32,10 @@ function rnd(mean, stdev) {
     return Math.round(rnd_snd()*stdev+mean);
 }
 
+function positiveRandom(mean, stdev) {
+    return Math.max(0, rnd(mean, stdev));
+}
+
 function MultiDimArray(columns, rows) {
 	var ar = new Array(columns);
 	for (var i = 0; i < columns; i++) {
@@ -40,36 +44,126 @@ function MultiDimArray(columns, rows) {
 	return ar;
 }
 
+function getPriceMoney() {
+	return [
+	    positiveRandom(4286606, 2801355),
+	    positiveRandom(95200, 6206),
+	    positiveRandom(6206, 1124),
+	    positiveRandom(201, 20),
+	    positiveRandom(47, 4)
+	];
+}
+
 function getPrices(lines, correctNumbers, extraNumbers) {
-    var i = 0;
 	var line8Prices = MultiDimArray(8,4);
-	line8Prices [7] [1] = {n1: 1, n2: 0, n3: 7, n4: 0, n5: 0};
-	line8Prices[7][0] = {n1: 1, n2: 0, n3: 0, n4: 0, n5: 0};
-	line8Prices[6][2] = {n1: 1, n2: 0, n3: 7, n4: 0, n5: 0};
+	var line9Prices = MultiDimArray(8,4);
+	var line10Prices = MultiDimArray(8,4);
+	var line11Prices = MultiDimArray(8,4);
+	var line12Prices = MultiDimArray(8,4);
 	
-	
+	line8Prices[7][1] = [1, 0, 7, 0, 0];
+	line8Prices[7][0] = [1, 0, 0, 0, 0];
+	line8Prices[6][2] = [0, 2, 0, 6, 0];
+    line8Prices[6][1] = [0, 1, 1, 6, 0];
+    line8Prices[6][0] = [0, 0, 2, 6, 0];
+    line8Prices[5][3] = [0, 0, 0, 3, 5];
+    line8Prices[5][2] = [0, 0, 0, 3, 5];
+    line8Prices[5][1] = [0, 0, 0, 3, 5];
+    line8Prices[5][0] = [0, 0, 0, 3, 0];
+    line8Prices[4][3] = [0, 0, 0, 0, 4];
+    line8Prices[4][2] = [0, 0, 0, 0, 4];
+    line8Prices[4][1] = [0, 0, 0, 0, 3];
+    line8Prices[4][0] = [0, 0, 0, 0, 0];
+
+    line9Prices[7][2] = [1, 14, 0, 21, 0];
+    line9Prices[7][1] = [1, 7, 7, 21, 0];
+    line9Prices[7][0] = [1, 0, 14, 21, 0];
+    line9Prices[6][3] = [0, 3, 0, 18, 15];
+    line9Prices[6][2] = [0, 2, 1, 18, 15];
+    line9Prices[6][1] = [0, 1, 2, 18, 15];
+    line9Prices[6][0] = [0, 0, 3, 18, 0];
+    line9Prices[5][3] = [0, 0, 0, 6, 20];
+    line9Prices[5][2] = [0, 0, 0, 6, 20];
+    line9Prices[5][1] = [0, 0, 0, 6, 15];
+    line9Prices[5][0] = [0, 0, 0, 6, 0];
+    line9Prices[4][3] = [0, 0, 0, 0, 10];
+    line9Prices[4][2] = [0, 0, 0, 0, 9];
+    line9Prices[4][1] = [0, 0, 0, 0, 6];
+    line9Prices[4][0] = [0, 0, 0, 0, 0];
+  
+    line10Prices[7][3] = [1, 21, 0, 63, 35];
+    line10Prices[7][2] = [1, 14, 7, 63, 35];
+    line10Prices[7][1] = [1, 7, 14, 63, 35];
+    line10Prices[7][0] = [1, 0, 21, 63, 0];
+    line10Prices[6][3] = [0, 3, 1, 36, 60];
+    line10Prices[6][2] = [0, 2, 2, 36, 60];
+    line10Prices[6][1] = [0, 1, 3, 36, 60];
+    line10Prices[6][0] = [0, 0, 4, 36, 0];
+    line10Prices[5][3] = [0, 0, 0, 10, 50];
+    line10Prices[5][2] = [0, 0, 0, 10, 45];
+    line10Prices[5][1] = [0, 0, 0, 10, 30];
+    line10Prices[5][0] = [0, 0, 0, 10, 0];
+    line10Prices[4][3] = [0, 0, 0, 0, 19];
+    line10Prices[4][2] = [0, 0, 0, 0, 16];
+    line10Prices[4][1] = [0, 0, 0, 0, 10];
+    line10Prices[4][0] = [0, 0, 0, 0, 0];
+ 
+    line11Prices[7][3] = [1, 21, 7, 126, 140];
+    line11Prices[7][2] = [1, 14, 14, 126, 140];
+    line11Prices[7][1] = [1, 7, 21, 126, 105];
+    line11Prices[7][0] = [1, 0, 28, 126, 0];
+    line11Prices[6][3] = [0, 3, 2, 60, 150];
+    line11Prices[6][2] = [0, 2, 3, 60, 135];
+    line11Prices[6][1] = [0, 1, 4, 60, 90];
+    line11Prices[6][0] = [0, 0, 5, 50, 0];
+    line11Prices[5][3] = [0, 0, 0, 15, 95];
+    line11Prices[5][2] = [0, 0, 0, 15, 80];
+    line11Prices[5][1] = [0, 0, 0, 15, 50];
+    line11Prices[5][0] = [0, 0, 0, 15, 0];
+    line11Prices[4][3] = [0, 0, 0, 0, 31];
+    line11Prices[4][2] = [0, 0, 0, 0, 25];
+    line11Prices[4][1] = [0, 0, 0, 0, 15];
+    line11Prices[4][0] = [0, 0, 0, 0, 0];
+   
+    line12Prices[7][3] = [1, 21, 14, 210, 350];
+    line12Prices[7][2] = [1, 14, 21, 21, 315];
+    line12Prices[7][1] = [1, 7, 28, 210, 210];
+    line12Prices[7][0] = [1, 0, 35, 210, 0];
+    line12Prices[6][3] = [0, 3, 3, 90, 285];
+    line12Prices[6][2] = [0, 2, 4, 90, 240];
+    line12Prices[6][1] = [0, 1, 5, 90, 150];
+    line12Prices[6][0] = [0, 0, 6, 90, 0];
+    line12Prices[5][3] = [0, 0, 0, 21, 155];
+    line12Prices[5][2] = [0, 0, 0, 21, 125];
+    line12Prices[5][1] = [0, 0, 0, 21, 75];
+    line12Prices[5][0] = [0, 0, 0, 21, 0];
+    line12Prices[4][3] = [0, 0, 0, 0, 46];
+    line12Prices[4][2] = [0, 0, 0, 0, 36];
+    line12Prices[4][1] = [0, 0, 0, 0, 21];
+    line12Prices[4][0] = [0, 0, 0, 0, 0];
+   
 	switch(cupon.length)
 	{
 	case 7:
-	return {n1: 1, n2: 0, n3: 0, n4: 0, n5: 0};
+	    return [1, 0, 0, 0, 0];
 	break;
 	case 8:
-	return line8Prices[correctNumbers, extraNumbers];
+	    return line8Prices[correctNumbers][extraNumbers];
 	break;
 	case 9:
-	
+	    return line9Prices[correctNumbers][extraNumbers];
 	break;
 	case 10:
-	
+	    return line10Prices[correctNumbers][extraNumbers];
 	break;
 	case 11:
-	
+	    return line11Prices[correctNumbers][extraNumbers];
 	break;
 	case 12:
-	
+	    return line12Prices[correctNumbers][extraNumbers];
 	break;
 	default:
-	return {n1: 0, n2: 0, n3: 0, n4: 0, n5: 0};
+	return [0, 0, 0, 0, 0];
 	}
 }
 
@@ -80,6 +174,18 @@ var winning;
 var extra;
 var corrects = 0;
 var correctsExtra = 0;
+var model;
+
+/**
+ * Check for support in browser.
+ * @return true if WebWorkers are supported
+ */
+function webWorkersSupported() {
+    if( window.Worker ) {
+        return true;
+    }
+   return false;
+}
 	
 function drawNumbers() {
 	winning = new Array();
@@ -150,7 +256,7 @@ weekPrice = numLines * 4;
 }
 
 function toggleNumber(number) {
-//alert(number);
+    $(".number").eq(number-1).toggleClass("selected");
 	if (cupon.indexOf(number) >= 0) {
 		cupon.splice(cupon.indexOf(number),1);
 	} else {
@@ -166,9 +272,71 @@ function drawAndCheck() {
 	//drawNumbers();
 	mockDrawNumbers();
 	checkCupon();
-	$("#resultInfo").html("Ukens vinnertall: " + winning.toString() + "<br>" +
-		  "Ekstratall: " + extra.toString() + "<br>" +
-		  "Du fikk " + corrects + " vinnertall og " + correctsExtra + " ekstratall riktig.");
+
+	var result = 0;
     var prices = getPrices(numLines, corrects, correctsExtra);
-	alert(prices.toString());
+    var money = getPriceMoney();
+    var infoText = "";
+    $("#resultInfo").empty();
+    for (var i = 0; i < 5; i++) {
+        result += prices[i] * money[i];
+    }
+    infoText = "Ukens vinnertall: " + winning.toString() + "<br>" +
+            "Ekstratall: " + extra.toString() + "<br>" +
+            "Du fikk " + corrects + " vinnertall og " + correctsExtra + " ekstratall riktig.<br>";
+    
+    if (result > 0) {
+        infoText += "Du fikk ";
+        var first = true;
+        if (prices[0] > 0) {
+            infoText += "1 førstepremie"; 
+            first = false;
+        }
+        if (prices[1] == 1) {
+            if (!first) {infoText += ", ";}
+            infoText += "1 andrepremie"; 
+        } else if (prices[1] > 1) {
+            if (!first) {infoText += ", ";}
+            infoText += prices[1] + " andrepremier"; 
+        } 
+        if (prices[2] == 1) {
+            if (!first) {infoText += ", ";}
+            infoText += "1 tredjepremie"; 
+        } else if (prices[2] > 1) {
+            if (!first) {infoText += ", ";}
+            infoText += prices[2] + " tredjepremier"; 
+        } 
+        if (prices[3] == 1) {
+            if (!first) {infoText += ", ";}
+            infoText += "1 fjerdeepremie"; 
+        } else if (prices[3] > 1) {
+            if (!first) {infoText += ", ";}
+            infoText += prices[2] + " fjerdeepremier"; 
+        } 
+        if (prices[4] == 1) {
+            if (!first) {infoText += ", ";}
+            infoText += "1 femteepremie"; 
+        } else if (prices[4] > 1) {
+            if (!first) {infoText += ", ";}
+            infoText += prices[2] + " femteeepremier"; 
+        } 
+        infoText +=".";
+  
+        alert("Du vant " + result.toString() + " kr!");
+    }
+    $("#resultInfo").html(infoText);
 }
+
+function updateStatus() {
+    $("#weekInfo").html(model.time.getWeek());
+    $("#yearInfo").html(model.time.getYear());
+}
+
+$(document).ready( function() {
+   if (!webWorkersSupported()) {
+      $("#payDirt").remove();
+   }
+   model = new Model;
+   model.reset();
+   updateStatus();
+});

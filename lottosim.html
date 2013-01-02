@@ -4,6 +4,7 @@
 <title>Oles lottosimulator</title>
 <link rel="stylesheet" type="text/css" href="lotto.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="lottoModel.js" type="text/javascript"/></script>
 <script src="lottoCode.js" type="text/javascript"/></script>
 </head>
 <body>
@@ -46,7 +47,7 @@
 </div>
 
 <div id="grouping">
-	<div id="status-container">
+	<div id="cupon-container">
 	<p>
 	<span>Din kupong (</span><span id="cuponLength">0</span> tall): <span id="cuponDisplay"></span>
 	</p>
@@ -57,7 +58,16 @@
 	<span id="resultInfo"></span>
 	</p>
 	</div>
-	<button id="test1" onClick="drawAndCheck()" value="Trekk" type="button">Trekk</button>
+	<div id="status-container">
+	<p>
+	Status uke <span id="weekInfo">0</span>, år <span id="yearInfo">0</span>:<br>
+	Du har <span id="plusMinus">tjent</span> <span id="saldo">0</span> kr. på lotto.
+	</p>
+	</div>
+	
+	<button id="week" onClick="drawAndCheck()" type="button">Simuler 1 uke</button><br>
+	<button id="year" onClick="drawAndCheck()" type="button">Simuler 1 år</button><br>
+	<button id="payDirt" onClick="drawAndCheck()" type="button">Vent på storgevinst!</button><br>
 </div>
 </body>
 </html>
