@@ -1,5 +1,5 @@
 /**
-	LottoSim, Copyright Ole Dahle 2012.
+	LottoSim, Copyright Ole Dahle 2012-2014.
 	This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -324,12 +324,17 @@ function drawAndCheck() {
   
         alert("Du vant " + result.toString() + " kr!");
     }
+    var couponPrice = $("#couponPrice").html();
+    model.player.saldo += (result - couponPrice);
+    model.time.increaseWeek();
     $("#resultInfo").html(infoText);
+    updateStatus();
 }
 
 function updateStatus() {
     $("#weekInfo").html(model.time.getWeek());
     $("#yearInfo").html(model.time.getYear());
+    $("#saldo").html(model.player.saldo);
 }
 
 $(document).ready( function() {
