@@ -1,6 +1,6 @@
 /**
-	LottoSim, Copyright Ole Dahle 2012-2014.
-	This program is free software: you can redistribute it and/or modify
+    LottoSim, Copyright Ole Dahle 2012-2016.
+    This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -13,6 +13,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 /**			 
 * Returns a random integer between 1 and 34
  * Using Math.round() will give you a non-uniform distribution!
